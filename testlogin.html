@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    .container {
+      margin-top: 100px;
+    }
+    
+    input[type=text], input[type=password] {
+      padding: 10px;
+      margin: 5px;
+      width: 200px;
+    }
+    
+    button {
+      padding: 10px;
+      width: 100px;
+    }
+    
+    #result {
+      margin-top: 50px;
+      font-weight: bold;
+    }
+    
+    #logo {
+      width: 5%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="logo" src="https://lh3.googleusercontent.com/i8examl9xggfE6J-NV-WTAIgXL8QuIzrQnkTs6Ag9kjNdatT--knjIM5aXntVw57oq2ARuTLijOBRgRaKzzYpZY" alt="Logo">
+    <h2>Login to TurboFunds</h2>
+    <input type="text" id="username" placeholder="Username" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
+    <button onclick="login()">Login</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    var link;
+    
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var resultElement = document.getElementById('result');
+
+      if (username === 'client0815' && password === '08152001') {
+        var currentDate = new Date();
+        var currentHour = currentDate.getHours();
+        var greeting;
+
+        if (currentHour < 12) {
+          greeting = 'Good morning';
+        } else if (currentHour < 18) {
+          greeting = 'Good afternoon';
+        } else {
+          greeting = 'Good evening';
+        }
+
+        link = 'https://sites.google.com/view/turbofunds/dareen-tiro';
+
+        resultElement.textContent = greeting + '! You have successfully logged in.';
+
+        // Open the link in the same tab
+        window.location.href = link;
+      } else if (username === 'tirojamxga' && password === 'October52002_') {
+        link = 'https://sites.google.com/view/turbofunds/admin';
+        
+        resultElement.textContent = 'Welcome! You have successfully logged in.';
+        
+        // Open the link in the same tab
+        window.location.href = link;
+      } else {
+        resultElement.textContent = 'Invalid username or password.';
+      }
+    }
+  </script>
+</body>
+</html>
